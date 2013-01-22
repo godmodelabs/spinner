@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spinner</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="build/build.css" />
+    <style>
+      body {
+        padding: 100px;
+      }
+      canvas {
+        padding: 5px;   
+      }
+    </style>
+  </head>
+  <body>
+    <script src="build/build.js"></script>
+    <script>
+
+    var Spinner = require('spinner');
+
+    (function(){
+      var spinner = new Spinner;
+      document.body.appendChild(spinner.el);
+    })();
+
+    (function(){
+      var spinner = new Spinner;
+      spinner.size(100).text('loading');
+      document.body.appendChild(spinner.el);
+    })();
+
+    (function(){
+      var spinner = new Spinner;
+      spinner.size(25).speed(30);
+      document.body.appendChild(spinner.el);
+    })();
+
+    </script>
+  </body>
+</html>
