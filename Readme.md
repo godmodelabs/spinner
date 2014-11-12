@@ -3,7 +3,7 @@
   Flexible spinner using canvas.
 
   ![js spinner component](http://i.imgur.com/Iyl0d.png)
-  
+
   Check out the [demo](http://godmodelabs.github.com/spinner/)!
 
 ## Installation
@@ -23,7 +23,7 @@ document.body.appendChild(spinner.el);
 ```
 
 ## API
-  
+
 ### Spinner#font(family)
 
   Change the font to `family`.
@@ -39,6 +39,14 @@ document.body.appendChild(spinner.el);
 ### Spinner#speed(n)
 
   Change the speed to `n` rpm, defaults to 60.
+
+### Spinner#stop()
+
+  Stops the animation.
+
+### Spinner#start()
+
+  Starts the animation (again).
 
 ## License
 
