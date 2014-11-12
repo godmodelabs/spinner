@@ -9,7 +9,7 @@
         padding: 100px;
       }
       canvas {
-        padding: 5px;   
+        padding: 5px;
       }
     </style>
   </head>
@@ -21,17 +21,20 @@
 
     (function(){
       var spinner = new Spinner;
+      window.spinner1 = spinner;
       document.body.appendChild(spinner.el);
     })();
 
     (function(){
       var spinner = new Spinner;
+      window.spinner2 = spinner;
       spinner.size(100).text('loading');
       document.body.appendChild(spinner.el);
     })();
 
     (function(){
       var spinner = new Spinner;
+      window.spinner3 = spinner;
       spinner.size(25).speed(30);
       document.body.appendChild(spinner.el);
     })();
