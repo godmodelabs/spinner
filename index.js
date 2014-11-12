@@ -24,13 +24,9 @@ function Spinner() {
   this.fontSize(11);
   this.speed(60);
   this.font('helvetica, arial, sans-serif');
+  this._shouldStop = false;
 
-  var self = this;
-  (function animate() {
-    raf(animate);
-    self.percent = (self.percent + self._speed / 36) % 100;
-    self.draw(self.ctx);
-  })();
+  this.start();
 }
 
 /**
@@ -97,6 +93,40 @@ Spinner.prototype.font = function(family){
 
 Spinner.prototype.speed = function(n) {
   this._speed = n;
+  return this;
+}
+
+
+/**
+ * Starts the animation.
+ *
+ * @return {Spinner}
+ * @api public
+ */
+
+Spinner.prototype.start = function() {
+  var self = this;
+  this._shouldStop = false;
+  (function animate() {
+    if (self._shouldStop) return;
+
+    raf(animate);
+    self.percent = (self.percent + self._speed / 36) % 100;
+    self.draw(self.ctx);
+  })();
+  return this;
+}
+
+
+/**
+ * Stops the animation.
+ *
+ * @return {Spinner}
+ * @api public
+ */
+
+Spinner.prototype.stop = function() {
+  this._shouldStop = true;
   return this;
 }
 
